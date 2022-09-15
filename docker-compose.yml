@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+    scn:
+        build:
+            context: .
+            dockerfile: .docker/Dockerfile_scn
+            args:
+                UID: ${UID}
+                GID: ${GID}
+        tty: true
+        volumes:
+            - ./src:/home/scn/src
+            - ${SCN_PATH}:/home/scn/scenario
+        env_file:
+            - ./.env

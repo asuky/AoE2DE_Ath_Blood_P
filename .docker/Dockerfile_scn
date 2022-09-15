@@ -1,0 +1,18 @@
+FROM python:3.11-rc-buster
+ARG UID
+ARG GID
+USER root
+RUN groupadd scn -g $GID && \
+    useradd scn -m -u $UID -g scn -s /bin/bash -d /home/scn
+
+RUN apt-get update
+RUN apt-get install -y locales vim less
+
+user scn
+WORKDIR /home/scn
+RUN mkdir src scenario
+COPY requirements.txt /home/scn/src
+
+RUN pip install --upgrade pip
+RUN pip install --upgrade setuptools
+RUN pip install -r /home/scn/src/requirements.txt
