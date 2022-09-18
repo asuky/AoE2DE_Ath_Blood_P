@@ -1,2 +1,3 @@
 .env
 .aoe2scenario
+__pycache__

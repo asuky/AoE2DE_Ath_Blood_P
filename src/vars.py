@@ -10,7 +10,7 @@ class _vars:
         # Use "In-Game" variables via this class
 
         ## Enemy Kills Counter 0-7
-        self.KILL_COUNTER = 0
+        self.ENEMY_KILLS = 0
     
     def __setattr__(self, name, value):
         if name in self.__dict__:

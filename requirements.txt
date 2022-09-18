@@ -1,4 +1,5 @@
 AoE2ScenarioParser
 aocref
 i18n
-yaml
+pyyaml
+mypy
